@@ -46,7 +46,7 @@ workoutRoute.put("/:id", async (c) => {
 workoutRoute.delete("/:id", async (c) => {
   const workoutId = Number(c.req.param("id"))
   const userId = c.get("userId")
-  const workout = await deleteWorkoutService(c.env.workout_tracker_db, userId, workoutId)
+  await deleteWorkoutService(c.env.workout_tracker_db, userId, workoutId)
   return c.json({
     message: "Delete success",
   })

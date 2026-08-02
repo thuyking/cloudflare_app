@@ -273,6 +273,8 @@ export async function deleteWorkoutPlan(db: D1Database, userId: number, planId: 
   await db.prepare(`
       DELETE FROM workout_plans WHERE id = ? AND user_id = ?
     `).bind(planId, userId).run()
-
+  await db.prepare(`
+      delete from workout where id = ? and 
+    `)
   return true;
 }
