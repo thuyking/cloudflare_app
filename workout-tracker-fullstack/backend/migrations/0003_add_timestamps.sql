@@ -1,4 +1,7 @@
-﻿UPDATE workout_plans
+﻿ALTER TABLE workout_plans
+ADD COLUMN updated_at TEXT;
+
+UPDATE workout_plans
 SET updated_at = created_at
 WHERE updated_at IS NULL;
 
