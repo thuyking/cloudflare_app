@@ -13,7 +13,8 @@ app.use("*", cors({
     "http://localhost:5173",
     "http://127.0.0.1:5173",
     "http://127.0.0.1:8787",
-    "https://cloudflare-app-660.pages.dev"
+    "https://cloudflare-app-660.pages.dev",
+    "https://5f394719.cloudflare-app-660.pages.dev",
   ],
   allowHeaders: ["Content-Type", "Authorization"],
   allowMethods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
