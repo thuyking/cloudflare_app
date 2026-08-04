@@ -1,0 +1,14 @@
+name: Backend Staging Deploy
+
+on:
+  push:
+    branches:
+      - staging
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps: 
+      - name: Checkout source
+        uses: actions/checkout@v4
