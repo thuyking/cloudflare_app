@@ -1,10 +1,10 @@
 name: Backend Staging Deploy
 
-on: 
+on:
   push:
     branches:
       - staging
 
-jobs: 
+jobs:
   deploy:
-    runs-on: ubuntu latest
+    runs-on: ubuntu-latest
