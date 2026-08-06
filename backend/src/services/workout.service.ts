@@ -1,4 +1,4 @@
-import { CreateWorkout, UpdateWorkout } from "../models/workout";
+import type { CreateWorkout, UpdateWorkout } from "../models/workout";
 import { createWorkout, deleteWorkout, getWorkout, getWorkoutById, updateWorkout } from "../repositories/workout.repository";
 
 

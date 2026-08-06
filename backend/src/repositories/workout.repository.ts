@@ -1,4 +1,4 @@
-import { CreateWorkout, UpdateWorkout, Workout } from "../models/workout";
+import type { CreateWorkout, UpdateWorkout, Workout } from "../models/workout";
 
 export async function getWorkout(db: D1Database, useId: number): Promise<Workout[]> {
   const result = await db.prepare(`

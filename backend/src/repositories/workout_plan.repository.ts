@@ -1,4 +1,4 @@
-import { CreateWorkoutPlanBody, WorkoutPlan, WorkoutPlanExercise } from "../models/workout";
+import type { CreateWorkoutPlanBody, WorkoutPlan, WorkoutPlanExercise } from "../models/workout";
 interface WorkoutPlanJoinRow {
   plan_id: number;
   user_id: number;
@@ -48,7 +48,7 @@ export async function getWorkoutPlan(db: D1Database, userId: number): Promise<Wo
           wp.id ASC,
           wpe.id ASC
     `).bind(userId).all<WorkoutPlanJoinRow>()
-  const planMap = new Map<Number, WorkoutPlan>()
+  const planMap = new Map<number, WorkoutPlan>()
   for (const row of result.results) {
     let plan = planMap.get(row.plan_id)
     if (!plan) {
@@ -150,7 +150,7 @@ export async function getWorkoutPlanById(db: D1Database, userId: number, planId:
 
     `).bind(planId, userId).all<WorkoutPlanJoinRow>()
   const firstRow = result.results[0]
-  let plan: WorkoutPlan = {
+  const plan: WorkoutPlan = {
     id: firstRow.plan_id,
     user_id: firstRow.user_id,
     name: firstRow.plan_name,

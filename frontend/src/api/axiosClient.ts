@@ -2,7 +2,7 @@ import axios, { AxiosHeaders } from "axios";
 import { tokenStorage } from "../utils";
 
 const axiosClient = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL,
+  baseURL: import.meta.env.VITE_API_BASE_URL || "https://my-first-worker.thuyngo-dev.workers.dev",
 });
 
 axiosClient.interceptors.request.use((config) => {
