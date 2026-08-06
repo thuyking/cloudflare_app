@@ -14,11 +14,11 @@ import ProtectedRoute from "./ProtectedRoute";
 
 const router = createBrowserRouter([
   {
-    path: "/login",
+    path: "auth/login",
     element: <LoginPage />,
   },
   {
-    path: "/register",
+    path: "auth/register",
     element: <RegisterPage />,
   },
   {
