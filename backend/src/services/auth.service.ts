@@ -1,13 +1,13 @@
-import { LoginBody, RegisterBody } from "../models/user";
+import type { LoginBody, RegisterBody } from "../models/user";
 import { createUser, getUserByEmail } from "../repositories/auth.repository";
 import { hashPassword } from "../utils/hash";
 import { createToken } from "../utils/jwt";
 
 export async function registerService(db: D1Database, body: RegisterBody) {
-  if (!body.name || !body.name.trim()) {
+  if (!body.name?.trim()) {
     throw new Error("Name is required")
   }
-  if (!body.email || !body.email.trim()) {
+  if (!body.email?.trim()) {
     throw new Error("Email is required")
   }
   if (!body.password) {

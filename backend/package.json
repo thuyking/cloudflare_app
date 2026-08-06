@@ -2,21 +2,22 @@
   "name": "my-first-worker",
   "version": "0.0.0",
   "private": true,
-"scripts": {
-  "dev": "wrangler dev",
-  "start": "wrangler dev",
+  "scripts": {
+    "dev": "wrangler dev",
+    "start": "wrangler dev",
+    "deploy:staging": "wrangler deploy --env staging",
+    "deploy:production": "wrangler deploy --env production",
+    "tail:staging": "wrangler tail --env staging",
+    "tail:production": "wrangler tail --env production",
+    "test": "vitest",
+    "cf-typegen": "wrangler types",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome lint .",
+    "format": "biome format --write ."
 
-  "deploy:staging": "wrangler deploy --env staging",
-  "deploy:production": "wrangler deploy --env production",
-
-  "tail:staging": "wrangler tail --env staging",
-  "tail:production": "wrangler tail --env production",
-
-  "test": "vitest",
-  "cf-typegen": "wrangler types",
-  "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.5.7",
     "@cloudflare/vitest-pool-workers": "^0.12.4",
     "@types/node": "^26.1.0",
     "typescript": "^5.5.2",

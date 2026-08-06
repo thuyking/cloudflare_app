@@ -1,4 +1,4 @@
-import { RegisterBody, UserRow } from "../models/user";
+import type { RegisterBody, UserRow } from "../models/user";
 
 export async function getUserByEmail(db: D1Database, email: string) {
   const result = await db.prepare('select * from user where email = ?').bind(email).first<UserRow>();

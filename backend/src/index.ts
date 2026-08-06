@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import { Bindings } from "./type/binding";
+import type { Bindings } from "./type/binding";
 // import userRouter from "./routes/user.routes";
 import authRoute from "./routes/auth.route";
 import workoutRoute from "./routes/workout.route";
