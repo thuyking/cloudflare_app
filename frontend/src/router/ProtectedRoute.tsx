@@ -10,7 +10,7 @@ export default function ProtectedRoute() {
       <Navigate
         replace
         state={{ from: location.pathname }}
-        to="/login"
+        to="auth/login"
       />
     );
   }

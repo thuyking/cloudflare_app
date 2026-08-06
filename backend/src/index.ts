@@ -27,8 +27,12 @@ app.get("/health", async (c) => {
     environment: c.env.ENVIRONMENT
   })
 })
+app.get("/", async (c) => {
+  return c.text("Hello World!")
+})
 // app.route("/user", userRouter)
-app.route("/", authRoute)
+
+app.route("/auth", authRoute)
 app.route("/workouts", workoutRoute)
 app.route("/plan", workoutPlanRoute)
 export default app;

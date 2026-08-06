@@ -19,7 +19,7 @@ export default function LoginPage() {
   const navigate = useNavigate();
   const location = useLocation();
   const locationState = location.state as LoginLocationState | null;
-  const from = locationState?.from ?? "/";
+  const from = locationState?.from ?? "/auth";
 
   const handleSubmit = async (values: LoginPayload) => {
     try {
