@@ -19,11 +19,7 @@ export default function LoginPage() {
   const navigate = useNavigate();
   const location = useLocation();
   const locationState = location.state as LoginLocationState | null;
-<<<<<<< Updated upstream
   const from = locationState?.from ?? "/auth";
-=======
-  const from = locationState?.from?.startsWith("/auth") ? "/" : locationState?.from ?? "/";
->>>>>>> Stashed changes
 
   const handleSubmit = async (values: LoginPayload) => {
     try {

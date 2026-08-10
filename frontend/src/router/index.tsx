@@ -1,4 +1,4 @@
-import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { MainLayout } from "../layouts";
 import { LoginPage, RegisterPage } from "../pages/auth";
 import { DashboardPage } from "../pages/dashboard";
@@ -14,17 +14,6 @@ import ProtectedRoute from "./ProtectedRoute";
 
 const router = createBrowserRouter([
   {
-<<<<<<< Updated upstream
-=======
-    path: "login",
-    element: <Navigate replace to="/auth/login" />,
-  },
-  {
-    path: "register",
-    element: <Navigate replace to="/auth/register" />,
-  },
-  {
->>>>>>> Stashed changes
     path: "auth/login",
     element: <LoginPage />,
   },
