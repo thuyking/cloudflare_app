@@ -18,7 +18,7 @@ export default function RegisterPage() {
       setIsSubmitting(true);
       await register(values);
       messageApi.success("Register successful. Please login.");
-      navigate("/login", { replace: true });
+      navigate("/auth/login", { replace: true });
     } catch (error: unknown) {
       messageApi.error(
         getErrorMessage(error, "Register failed. Please check your information."),
@@ -82,7 +82,7 @@ export default function RegisterPage() {
         </Form>
 
         <Paragraph className="mb-0 text-center">
-          Already have an account? <Link to="/login">Login</Link>
+          Already have an account? <Link to="/auth/login">Login</Link>
         </Paragraph>
       </Card>
     </main>

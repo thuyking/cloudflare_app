@@ -23,8 +23,8 @@ axiosClient.interceptors.response.use(
     if (axios.isAxiosError(error) && error.response?.status === 401) {
       tokenStorage.clearToken();
 
-      if (window.location.pathname !== "/login") {
-        window.location.assign("/login");
+      if (window.location.pathname !== "/auth/login") {
+        window.location.assign("/auth/login");
       }
     }
 

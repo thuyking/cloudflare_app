@@ -19,7 +19,11 @@ export default function LoginPage() {
   const navigate = useNavigate();
   const location = useLocation();
   const locationState = location.state as LoginLocationState | null;
+<<<<<<< Updated upstream
   const from = locationState?.from ?? "/auth";
+=======
+  const from = locationState?.from?.startsWith("/auth") ? "/" : locationState?.from ?? "/";
+>>>>>>> Stashed changes
 
   const handleSubmit = async (values: LoginPayload) => {
     try {
@@ -90,7 +94,7 @@ export default function LoginPage() {
         </Form>
 
         <Paragraph className="mb-0 text-center">
-          Don't have an account? <Link to="/register">Register</Link>
+          Don't have an account? <Link to="/auth/register">Register</Link>
         </Paragraph>
       </Card>
     </main>

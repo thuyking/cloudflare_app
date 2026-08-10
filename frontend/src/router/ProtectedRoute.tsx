@@ -10,7 +10,11 @@ export default function ProtectedRoute() {
       <Navigate
         replace
         state={{ from: location.pathname }}
+<<<<<<< Updated upstream
         to="auth/login"
+=======
+        to="/auth/login"
+>>>>>>> Stashed changes
       />
     );
   }

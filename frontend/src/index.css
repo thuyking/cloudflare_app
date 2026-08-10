@@ -1,12 +1,274 @@
 @import "tailwindcss";
 
+:root {
+  color-scheme: dark;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  --wt-bg: #070a0d;
+  --wt-surface: #0d1117;
+  --wt-surface-raised: #141a21;
+  --wt-surface-muted: #1a222c;
+  --wt-border: #26313d;
+  --wt-primary: #b6ff3b;
+  --wt-primary-hover: #c8ff66;
+  --wt-primary-active: #9fe62e;
+  --wt-primary-contrast: #071006;
+  --wt-text: #f4f7fa;
+  --wt-text-muted: #a7b0bc;
+  --wt-text-subtle: #74808e;
+  --wt-info: #38bdf8;
+  --wt-success: #34d399;
+  --wt-warning: #fbbf24;
+  --wt-danger: #f87171;
+  --wt-radius-control: 8px;
+  --wt-radius-panel: 12px;
+  --wt-radius-modal: 14px;
+  --wt-shadow-raised: 0 18px 50px rgba(0, 0, 0, 0.35);
+  --wt-focus-ring: 0 0 0 3px rgba(182, 255, 59, 0.24);
+}
+
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: #f5f5f5;
+  background: var(--wt-bg);
+  color: var(--wt-text);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 * {
   box-sizing: border-box;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: var(--wt-primary);
+  text-decoration-color: rgba(182, 255, 59, 0.4);
+  text-underline-offset: 3px;
+  transition:
+    color 160ms ease,
+    text-decoration-color 160ms ease;
+}
+
+a:hover {
+  color: var(--wt-primary-hover);
+  text-decoration-color: rgba(200, 255, 102, 0.72);
+}
+
+#root {
+  min-height: 100vh;
+  background: var(--wt-bg);
+}
+
+::selection {
+  background: rgba(182, 255, 59, 0.32);
+  color: var(--wt-text);
+}
+
+:focus-visible {
+  outline: 0;
+  box-shadow: var(--wt-focus-ring);
+}
+
+.ant-typography,
+.ant-card,
+.ant-layout,
+.ant-menu,
+.ant-table,
+.ant-form,
+.ant-descriptions,
+.ant-list,
+.ant-empty,
+.ant-result {
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+.ant-typography {
+  color: var(--wt-text);
+}
+
+.ant-typography-secondary,
+.ant-typography.ant-typography-secondary {
+  color: var(--wt-text-muted);
+}
+
+.ant-card {
+  border: 1px solid var(--wt-border);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.015);
+}
+
+.ant-card-head {
+  border-bottom-color: var(--wt-border);
+}
+
+.ant-btn {
+  min-height: 40px;
+  font-weight: 650;
+}
+
+.ant-btn-primary {
+  color: var(--wt-primary-contrast);
+}
+
+.ant-input,
+.ant-input-number,
+.ant-picker,
+.ant-select-selector {
+  min-height: 40px;
+}
+
+.ant-input:focus,
+.ant-input-focused,
+.ant-input-number-focused,
+.ant-picker-focused,
+.ant-select-focused .ant-select-selector {
+  box-shadow: var(--wt-focus-ring) !important;
+}
+
+.ant-table-wrapper {
+  color: var(--wt-text);
+}
+
+.ant-table {
+  font-size: 14px;
+}
+
+.ant-table-cell {
+  font-variant-numeric: tabular-nums;
+}
+
+.ant-tag {
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.wt-app-shell {
+  background:
+    radial-gradient(circle at 18% 0%, rgba(182, 255, 59, 0.08), transparent 28rem),
+    radial-gradient(circle at 100% 12%, rgba(56, 189, 248, 0.06), transparent 26rem),
+    var(--wt-bg);
+}
+
+.wt-sider {
+  border-right: 1px solid var(--wt-border);
+  background: linear-gradient(180deg, #0d1117 0%, #070a0d 100%) !important;
+}
+
+.wt-sider .ant-layout-sider-children {
+  display: flex;
+  flex-direction: column;
+}
+
+.wt-main-menu.ant-menu {
+  flex: 1;
+  border-inline-end: 0 !important;
+  background: transparent;
+  padding: 8px;
+}
+
+.wt-main-menu .ant-menu-item {
+  min-height: 44px;
+  margin-inline: 0;
+  margin-block: 4px;
+  border-radius: var(--wt-radius-control);
+  color: var(--wt-text-muted);
+}
+
+.wt-main-menu .ant-menu-item .anticon {
+  color: var(--wt-text-subtle);
+}
+
+.wt-main-menu .ant-menu-item a {
+  color: inherit;
+}
+
+.wt-main-menu .ant-menu-item:hover {
+  background: rgba(255, 255, 255, 0.045) !important;
+  color: var(--wt-text);
+}
+
+.wt-main-menu .ant-menu-item-selected {
+  background: rgba(182, 255, 59, 0.12) !important;
+  color: var(--wt-text) !important;
+  font-weight: 700;
+}
+
+.wt-main-menu .ant-menu-item-selected::before {
+  position: absolute;
+  inset-block: 9px;
+  inset-inline-start: 0;
+  width: 3px;
+  border-radius: 999px;
+  background: var(--wt-primary);
+  content: "";
+}
+
+.wt-main-menu .ant-menu-item-selected .anticon {
+  color: var(--wt-primary);
+}
+
+.wt-shell-button.ant-btn {
+  min-width: 44px;
+  min-height: 44px;
+  border-color: rgba(255, 255, 255, 0.08);
+  color: var(--wt-text);
+}
+
+.wt-shell-button.ant-btn:hover,
+.wt-shell-button.ant-btn:focus-visible {
+  border-color: rgba(182, 255, 59, 0.45) !important;
+  color: var(--wt-primary) !important;
+  background: rgba(182, 255, 59, 0.08) !important;
+}
+
+.wt-logout-button.ant-btn {
+  min-height: 44px;
+  border-color: rgba(248, 113, 113, 0.26);
+  color: #fecaca;
+  background: rgba(248, 113, 113, 0.08);
+}
+
+.wt-logout-button.ant-btn:hover,
+.wt-logout-button.ant-btn:focus-visible {
+  border-color: rgba(248, 113, 113, 0.55) !important;
+  color: #ffffff !important;
+  background: rgba(248, 113, 113, 0.16) !important;
+}
+
+.wt-content-panel {
+  border: 1px solid rgba(38, 49, 61, 0.82);
+  background: rgba(13, 17, 23, 0.86);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.018);
+}
+
+.wt-app-loading .ant-spin-text {
+  color: var(--wt-text-muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.wt-app-loading .ant-spin-dot-holder {
+  color: var(--wt-primary);
+}
+
+@media (max-width: 640px) {
+  .ant-btn {
+    min-height: 44px;
+  }
 }
