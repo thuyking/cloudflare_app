@@ -13,8 +13,7 @@ app.use("*", cors({
     "http://localhost:5173",
     "http://127.0.0.1:5173",
     "http://127.0.0.1:8787",
-    "https://cloudflare-app-660.pages.dev",
-    "https://7f67d40f.cloudflare-app-660.pages.dev",
+    "https://workout-tracker-front.thuyngo-dev.workers.dev",
   ],
   allowHeaders: ["Content-Type", "Authorization"],
   allowMethods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
