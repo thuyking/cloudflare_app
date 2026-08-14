@@ -2,8 +2,8 @@ import { Hono } from "hono";
 import { authMiddleware } from "../middleware/auth";
 
 import { createWorkoutPlan, deleteWorkoutPlan, getWorkoutPlan, getWorkoutPlanById } from "../repositories/workout_plan.repository";
-import { Bindings, Variables } from "../type/binding";
-import { CreateWorkoutPlanBody } from "../models/workout";
+import type { Bindings, Variables } from "../type/binding";
+import type { CreateWorkoutPlanBody } from "../models/workout";
 import { togglePlanExerciseService } from "../services/workout_plan.service";
 
 const workoutPlanRoute = new Hono<{
